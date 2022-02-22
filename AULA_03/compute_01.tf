@@ -10,6 +10,7 @@ resource "google_compute_instance" "web" {
   }
 
   network_interface {
+    network = google_compute_network.vpc_network.name
     access_config {
         
     }
