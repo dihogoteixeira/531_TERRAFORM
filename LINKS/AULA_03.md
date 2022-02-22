@@ -13,12 +13,12 @@ Referência na apostila: `PÁGINA 39`
 
 1. Adicionar caminho absoluto do arquivo.json que contem sua `ServiceAccountKey` obtida na criação da key:
 ```sh
-export GOOGLE_APPLICATION_CREDENTIALS=/seu/path/para/arquivo.json
+export GOOGLE_APPLICATION_CREDENTIALS="/seu/path/para/arquivo.json"
 ```
 
 2. Adicionar `ID do projeto` GCP:
 ```sh
-export GOOGLE_PROJECT=seu-project-id
+export GOOGLE_PROJECT="seu-project-id"
 ```
 
 ---
@@ -27,8 +27,8 @@ export GOOGLE_PROJECT=seu-project-id
 ```sh
 sudo tee -a ~/.bashrc > /dev/null <<EOF
 # EXPORTING PROVIDER GCP VARS TO TERRAFORM
-export GOOGLE_APPLICATION_CREDENTIALS=/seu/path/para/arquivo.json
-export GOOGLE_PROJECT=seu-project-id
+export GOOGLE_APPLICATION_CREDENTIALS="/seu/path/para/arquivo.json"
+export GOOGLE_PROJECT="seu-project-id"
 EOF
 ```
 ---
