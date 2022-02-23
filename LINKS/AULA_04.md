@@ -73,7 +73,9 @@ Instruções:
 
 3. Crie uma regra de firewall liberando apenas a porta 80 para 0.0.0.0/0. 
 
-4. Crie um disco de 20GB SSD, faça o vínculo com a máquina virtual. 
+4. Crie uma VM com imagem bootavel Debian, na Network custom
+
+5. Crie um disco de 20GB SSD, faça o vínculo com a máquina virtual. 
 
 `
 Obs: lembre-se de ao final destruir sua infraestrutura  por questões de billing e manutenção sadia da sua free tier.
