@@ -12,7 +12,7 @@ Caso houver qualquer erro, leia atentamente o terminal.
 
 2. Crie uma sub-rede 10.240.1.0/24 e faça o vínculo com a VPC
 
-3. Crie 8 máquinas virtuais utilizando a rede criada. `Com seus nomes construidos dinamicamente`
+3. Crie 4 máquinas virtuais utilizando a rede criada. `Com seus nomes construidos dinamicamente`
 
 4. Crie uma regra de Firewall permitindo o `ingress` TCP 22 para maquinas com tag: `admin`
 

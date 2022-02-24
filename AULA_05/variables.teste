@@ -1,0 +1,42 @@
+# META-ARGUMENTOS (PALAVRAS RESERVADAS)
+# source
+# version
+# providers
+# count 
+# for_each 
+# lifecycle
+# depends_on
+# locals
+
+variable "object_collection" {
+  type = object()
+  default = {
+    Environment = "hml",
+    Project = 2,
+    Terrafomr = true
+  }
+}
+
+variable "map_string" {
+  type = map(string)
+  default = ({
+    "Environment" : "hml",
+    "Project" : "aula_4",
+    "Terrafomr" : "true"
+  })
+}
+
+variable "tuple_collection" {
+  type = tuple
+  default = ["a", 1, true]
+}
+
+variable "private_subnet_cidrs" {
+  type    = list(string)
+  default = ["10.10.0.0/16", "10.20.0.0/16", "10.10.0.0/16"]
+}
+
+variable "azs" {
+  type    = list(string)
+  default = ["us-east-1a", "us-east-1b", "us-east-1c", ]
+}
