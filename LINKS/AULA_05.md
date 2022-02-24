@@ -18,6 +18,8 @@ Caso houver qualquer erro, leia atentamente o terminal.
 
 5. Crie uma regra de Firewall permitindo o `ingress` TCP 80 para maquinas com tag: `web`
 
+6. Instanciar output de recursos.
+
 `
 Obs: lembre-se de ao final destruir sua infraestrutura  por questões de billing e manutenção sadia da sua free tier.
 `
