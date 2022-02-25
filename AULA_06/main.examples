@@ -1,0 +1,35 @@
+# LOCAL MODULE
+module "banana" {
+    source = "./mod-gcp-instance"
+    
+}
+
+# GITHUB REST
+module "git_remote" {
+  source = "git@github.com:dihogoteixeira/mod-gcp-instance.git?ref=v1.0"
+}
+
+# PUBLIC ENDPOINT/REGISTRY
+module "network" {
+  source  = "terraform-google-modules/network/google"
+  version = "5.0.0"
+  # insert the 3 required variables here
+}
+
+# PRIVATE ENDPOINT/REGISTRY
+module "network" {
+  source  = "org.terraform.io/terraform-google-modules/network/google"
+  version = "5.0.0"
+  # insert the 3 required variables here
+}
+
+# IT'SFREEEEEEEE: HASHICORP REGISTRY PROTOCOL
+# IMPLEMENTAR UMA APLICACAO PYTHON, GO, JAVA
+# ENDPOINT: regritry.capgemini.io/terraform-google-modules/network/google
+# REPO: git@github.com:dihogoteixeira/mod-gcp-instance.git
+# TAG: git@github.com:dihogoteixeira/mod-gcp-instance.git?ref=v1.0
+module "network" {
+  source = "regritry.capgemini.io/terraform-google-modules/network/google"
+  version = "5.0.0"
+}
+
