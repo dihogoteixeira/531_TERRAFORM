@@ -1,6 +1,6 @@
 Topcs:
 
-1. Remote State
+1. Create/Configure GitHub account
 2. Creating a Local Modules
 3. Using local Modules
 4. Creating GitHub repository
@@ -251,3 +251,50 @@ To git@github.com:dihogoteixeira/tf-gcp-modules.git
 ```
 
 Devemos alterar nosso código que consome este módulo para utilizar a nova `tag`.
+
+#### HANDS ON LOCAL MODULES
+
+Realizaremos em conjunto a construção dos mosulos `gcp_instances`, `gcp_networks` e `gcp_subnetworks`.
+
+Demonstração de utilização em `AULA_07`
+
+```sh
+.
+├── main.tf
+├── mod_custom
+│   ├── gcp_instances
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   ├── scripts
+│   │   │   └── us.sh
+│   │   └── variables.tf
+│   ├── gcp_networks
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   └── variables.tf
+│   └── gcp_subnetworks
+│       ├── main.tf
+│       ├── outputs.tf
+│       └── variables.tf
+├── outputs.tf
+└── terraform.tf
+
+5 directories, 13 files
+```
+
+---
+
+Realizamos em conjunto a construção do `mod-gcp-subnetwork`
+
+[repositrio_do_modulo_subnetwork](https://github.com/dihogoteixeira/mod-gcp-subnetwork.git "repositrio_do_modulo_subnetwork")
+
+Demonstração de utilização em `aula-07`
+
+```sh
+./aula-07/demo
+├── main.tf
+├── outputs.tf
+└── terraform.tf
+
+0 directories, 3 files
+```

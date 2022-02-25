@@ -1,13 +1,3 @@
-Topcs:
-
-1. Remote State
-2. Creating a Local Modules
-3. Using local Modules
-4. Creating GitHub repository
-5. Versioning Module
-6. Using remote Modules
-7. Demo
-
 ---
 #### NOTA
 
