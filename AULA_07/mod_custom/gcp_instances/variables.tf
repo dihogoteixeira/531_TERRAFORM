@@ -1,7 +1,7 @@
 variable "amount" {
   description = "Quantidade de máquinas desejadas"
-  type = number
-  default = 1
+  type        = number
+  default     = 1
 }
 
 variable "name" {
