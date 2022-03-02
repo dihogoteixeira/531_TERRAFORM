@@ -5,7 +5,7 @@ module "master" {
   image                   = "ubuntu-os-cloud/ubuntu-1804-lts"
   machine_type            = "e2-medium"
   metadata_startup_script = "./scripts/install_master.sh"
-  tags                    = "master"
+  tags                    = ["master"]
 
   ssh_keys = [
     {
@@ -27,7 +27,7 @@ module "worker" {
   machine_type            = "e2-medium"
   amount                  = 2
   metadata_startup_script = "./scripts/install_worker.sh"
-  tags                    = "worker"
+  tags                    = ["worker"]
 
   ssh_keys = [
     {
