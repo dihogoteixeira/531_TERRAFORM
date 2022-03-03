@@ -1,6 +1,6 @@
 variable "name" {
   type        = string
-  description = "Nome do Grupo"
+  description = "Nome do grupo"
 }
 
 variable "base_instance_name" {
@@ -10,17 +10,17 @@ variable "base_instance_name" {
 
 variable "region" {
   type        = string
-  description = "Regiao do grupo de instancias"
+  description = "Região"
 }
 
 variable "distribution_policy_zones" {
   type        = list(string)
-  description = "Zonas do Grupo"
+  description = "Zonas do grupo"
 }
 
 variable "instance_template" {
   type        = string
-  description = "Self link do Template de instanciac"
+  description = "Self link do template"
 }
 
 variable "resource_depends_on" {
