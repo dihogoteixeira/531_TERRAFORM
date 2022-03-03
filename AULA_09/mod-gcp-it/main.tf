@@ -1,8 +1,7 @@
 resource "google_compute_instance_template" "this" {
   name_prefix = var.name
   description = var.descrip
-
-  tags = var.tags
+  tags        = var.tags
 
   labels = {
     environment = terraform.workspaces
