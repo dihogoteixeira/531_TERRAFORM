@@ -1,14 +1,12 @@
 #### PROJETO FINAL - PART 1
 
-Realizamos em conjunto a construção dos módulos:
+1. Provisionamos um cluster de K8S utilizando scripts de inicializacao em instancias computacionais na GCP com chave ssh e firewall permitindo a conexao as mesmas. 
+
+2. Criamos uma aplicacao simples de NGINX e a expomos com NodePort testando o acesso atraves do IP público dos nodes.
+
+3. Iniciamos em conjunto a construção do módulo:
 
 - [mod-gcp-igm](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_region_instance_group_manager) (`Instance Group Manager`)
-- [mod-gcp-it](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance_template) (`Instance Template`)
-- [mod-gcp-lb](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_global_forwarding_rule) (`LoadBalancer`)
-
-Instanciamos um módulo publico para construir nossos recursos de Network:
-
-- [terraform-google-modules/network/google](https://registry.terraform.io/modules/terraform-google-modules/network/google/latest) (`3.3.0`)
 
 **NOTA:** Grande parte do código utilizado foi utilizado com base nos exemplos disponíveis nas documentações dos recursos, apenas parametrizamos  `variaveis` e `outputs` conforme abordado em nossas aulas.
 
