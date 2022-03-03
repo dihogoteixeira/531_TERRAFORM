@@ -37,7 +37,7 @@ resource "google_compute_instance_template" "this" {
       // Ephemeral IP
     }
   }
-  
+
   metadata = {
     ssh-keys = join("\n", [for key in var.ssh_keys : "${key.user}:${key.publickey}"])
   }
