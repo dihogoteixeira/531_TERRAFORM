@@ -29,10 +29,12 @@ resource "google_compute_instance_template" "this" {
   network_interface {
     network    = var.network
     subnetwork = var.subnetwork
-    # Como teste, habilitar ips externos nas maquinas tambem
-    # Mundo real, nao seria necessario, o loadbalance iria bater direto nas instancias
-    # e caso fosse necessario efetuar SSH nas maquinas bastava criar uma instancia na mesma rede com 
-    # acesso de rede externo
+    /*
+      Como teste, habilitar ips externos nas maquinas tambem
+      Mundo real, nao seria necessario, o loadbalance iria bater direto nas instancias
+      e caso fosse necessario efetuar SSH nas maquinas bastava criar uma instancia na mesma rede com 
+      acesso de rede externo
+    */
     access_config {
       // Ephemeral IP
     }
