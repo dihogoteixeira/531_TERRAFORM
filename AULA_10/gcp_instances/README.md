@@ -5,12 +5,10 @@ Esse modulo facilita a criacao de instancia computacionais no provider `GCP`.
 - GCP Virtual Machine Instance (VM)
 
 # Compatibility
----
 
 This module is meant for use with Terraform 0.13+ and teasted using Terraform 1.0+.
 
 ## Usage
----
 
 You can go to the example:
 
@@ -46,7 +44,6 @@ Then perform the follwing commands on the root folder:
 - `terraform destroy`to destroy the build infrastructure
 
 ## Inputs
----
 
 ### Required
 
@@ -60,3 +57,18 @@ Then perform the follwing commands on the root folder:
 |------|-------------|------|---------|:--------:|
 | ssh_keys | ssh public | list(object[{}] |  true  |  no  |
 
+## Outputs
+
+- `name` Return the nam of instance
+```hcl
+output "instance" {
+  value = module.instance.name
+}
+```
+
+- `external_ip` Instance External IP
+```hcl
+output "external_ip" {
+  value = module.instance.external_ip
+}
+```
