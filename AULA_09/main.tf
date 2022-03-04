@@ -22,7 +22,7 @@ module "vpc" {
 // FIREWALL
 resource "google_compute_firewall" "fw-dev" {
   name    = "fw-dev"
-  network = module.vpc.nework_self_link
+  network = module.vpc.network_self_link
 
   allow {
     protocol = "tcp"
@@ -58,7 +58,7 @@ data "google_compute_subnetwork" "subnet-us" {
 }
 
 data "google_compute_subnetwork" "subnet-asia" {
-  name   = "subnet-us"
+  name   = "subnet-asia"
   region = "asia-east1"
   depends_on = [
     module.vpc
@@ -72,6 +72,16 @@ module "instance-template-us" {
   metadata_startup_script = "./scripts/us.sh"
   network                 = module.vpc.network_self_link
   subnetwork              = data.google_compute_subnetwork.subnet-us.self_link
+  ssh_keys = [
+    {
+      publickey = "ssh-rsa yourkeyabc username@PC"
+      user      = "bob"
+    },
+    {
+      publickey = "ssh-rsa yourkeyabc username@PC"
+      user      = "mosulco"
+    }
+  ]
 }
 
 module "instance-template-asia" {
@@ -80,6 +90,16 @@ module "instance-template-asia" {
   metadata_startup_script = "./scripts/asia.sh"
   network                 = module.vpc.network_self_link
   subnetwork              = data.google_compute_subnetwork.subnet-asia.self_link
+  ssh_keys = [
+    {
+      publickey = "ssh-rsa yourkeyabc username@PC"
+      user      = "bob"
+    },
+    {
+      publickey = "ssh-rsa yourkeyabc username@PC"
+      user      = "mosulco"
+    }
+  ]
 }
 
 // INSTANCE GROUPS
@@ -98,7 +118,7 @@ module "mig-asia" {
   name                      = "mig-asia"
   base_instance_name        = "asia-web"
   region                    = "asia-east1"
-  instance_template         = module.instance-template-us.self_link
+  instance_template         = module.instance-template-asia.self_link
   distribution_policy_zones = ["asia-east1-a"]
   resource_depends_on       = [module.vpc]
 }

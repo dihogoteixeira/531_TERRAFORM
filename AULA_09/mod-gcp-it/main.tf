@@ -1,10 +1,10 @@
 resource "google_compute_instance_template" "this" {
   name_prefix = var.name
-  description = var.descrip
+  description = var.desc
   tags        = var.tags
 
   labels = {
-    environment = terraform.workspaces
+    environment = terraform.workspace
   }
 
   instance_description = var.instance_description
@@ -18,7 +18,7 @@ resource "google_compute_instance_template" "this" {
 
   disk {
     source_image = var.source_image
-    auto_delete  = var.source_image
+    auto_delete  = var.auto_delete
     boot         = var.boot
   }
 
@@ -42,5 +42,5 @@ resource "google_compute_instance_template" "this" {
     ssh-keys = join("\n", [for key in var.ssh_keys : "${key.user}:${key.publickey}"])
   }
 
-  metadata_statup_script = file(var.metadata_statup_script)
+  metadata_startup_script = file(var.metadata_startup_script)
 }
