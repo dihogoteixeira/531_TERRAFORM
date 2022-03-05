@@ -46,3 +46,10 @@ variable "ssh_keys" {
     }
   ]
 }
+
+variable "labels" {
+  type = map(string)
+  default = {
+    "Terraform" = "true"
+  }
+}

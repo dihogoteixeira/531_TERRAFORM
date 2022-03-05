@@ -15,8 +15,7 @@ resource "google_compute_instance" "this" {
     network = var.network
   }
 
-  labels = {
-    
-  }
+  labels = var.labels
+  
   metadata_startup_script = "./scripts/us.sh"
 }
